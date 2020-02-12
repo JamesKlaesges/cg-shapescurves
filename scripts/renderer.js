@@ -100,7 +100,7 @@ class Renderer {
     {
         
     }
-    drawLine(x0,y0,x1,y1,color,framebuffer)
+    drawLineXY(x0,y0,x1,y1,color,framebuffer)
     {
         if (Math.abs(y1-y0) <= Math.abs(x1-x0)) {
             if (x0<x1){
