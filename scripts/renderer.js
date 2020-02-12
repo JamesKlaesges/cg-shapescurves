@@ -48,7 +48,10 @@ class Renderer {
 
     // framebuffer:  canvas ctx image data
     drawSlide0(framebuffer) {
-        
+        var pt0 = {100, 100};
+        var pt1 = {200, 100};
+        var color = [168, 78, 50, 100];
+        drawLine(pt0, pt1, color, framebuffer)
     }
 
     // framebuffer:  canvas ctx image data
@@ -98,7 +101,7 @@ class Renderer {
     // framebuffer:  canvas ctx image data
     drawLine(pt0, pt1, color, framebuffer)
     {
-        
+        drawLineXY(pt0.x, pt0.y, pt1.x, pt1.y, color, framebuffer);
     }
     drawLineXY(x0,y0,x1,y1,color,framebuffer)
     {
