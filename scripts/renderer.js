@@ -58,7 +58,7 @@ class Renderer {
     drawSlide1(framebuffer) {
         var color = [66, 245, 129, 100];
         var center = {x:250, y:250};
-        var radius = 50
+        var radius = 50;
         drawCirle(center, radius, color, framebuffer);
     }
 
@@ -91,7 +91,7 @@ class Renderer {
     // color:        array of int [R, G, B, A]
     // framebuffer:  canvas ctx image data
     drawCirle(center, radius, color, framebuffer) {
-        var previous
+        var previous;
         var num_points = this.num_curve_sections;
         for (var i=0; i<num_points; i++){
                
