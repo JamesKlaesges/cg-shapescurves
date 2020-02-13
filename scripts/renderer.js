@@ -103,7 +103,7 @@ class Renderer {
     {
         drawLineXY(pt0.x, pt0.y, pt1.x, pt1.y, color, framebuffer);
     }
-    function drawLineXY(x0,y0,x1,y1,color,framebuffer)
+    drawLineXY(x0,y0,x1,y1,color,framebuffer)
     {
         if (Math.abs(y1-y0) <= Math.abs(x1-x0)) {
             if (x0<x1){
@@ -122,7 +122,7 @@ class Renderer {
             }
         }
     }
-    function drawLineLow(x0, y0, x1, y1, color, framebuffer){
+    drawLineLow(x0, y0, x1, y1, color, framebuffer){
         var A = y1 - y0;
         var B = x0 - x1;
         var iy = 1;
@@ -145,7 +145,7 @@ class Renderer {
             }
         }
     }
-    function drawLineHigh(x0,y0,x1,y1,color,framebuffer)
+    drawLineHigh(x0,y0,x1,y1,color,framebuffer)
     {
         var x = x0;
         var y = y0;
