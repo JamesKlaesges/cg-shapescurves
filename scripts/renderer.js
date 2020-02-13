@@ -50,7 +50,7 @@ class Renderer {
     drawSlide0(framebuffer) {
         var color = [168, 78, 50, 100];
         var left_bot = {x:100, y:100};
-        var right_top = {x:800, y:500};
+        var right_top = {x:700, y:500};
         this.drawRectangle(left_bot, right_top, color, framebuffer);
     }
 
