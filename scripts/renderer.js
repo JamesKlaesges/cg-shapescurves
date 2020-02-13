@@ -91,10 +91,16 @@ class Renderer {
     // color:        array of int [R, G, B, A]
     // framebuffer:  canvas ctx image data
     drawCirle(center, radius, color, framebuffer) {
-        var previous;
+        var current;
+        var previous = {x: center.x + radius, y: center.y};
         var num_points = this.num_curve_sections;
+        var angle = 360/num_points;
+        var currentAngle = angle;
         for (var i=0; i<num_points; i++){
-               
+               current = {x: center.x + radius * Math.cos(currentAngle), y: center.y + radius * Math.cos(currentAngle)};
+               this.drawLine(previous, current, color, framebuffer);
+               current = previous;
+               currentAngle = currentAngle + angle;
         }
     }
 
