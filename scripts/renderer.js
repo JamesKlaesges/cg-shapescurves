@@ -56,7 +56,10 @@ class Renderer {
 
     // framebuffer:  canvas ctx image data
     drawSlide1(framebuffer) {
-
+        var color = [66, 245, 129, 100];
+        var center = {x:250, y:250};
+        var radius = 50
+        drawCirle(center, radius, color, framebuffer);
     }
 
     // framebuffer:  canvas ctx image data
@@ -76,6 +79,7 @@ class Renderer {
     drawRectangle(left_bottom, right_top, color, framebuffer) {
         var left_top = {x: left_bottom.x, y: right_top.y};
         var right_bot = {x: right_top.x, y: left_bottom.y};
+        
         this.drawLine(left_bottom, right_bot, color, framebuffer);
         this.drawLine(right_bot, right_top, color, framebuffer);
         this.drawLine(right_top, left_top, color, framebuffer);
@@ -87,7 +91,11 @@ class Renderer {
     // color:        array of int [R, G, B, A]
     // framebuffer:  canvas ctx image data
     drawCirle(center, radius, color, framebuffer) {
-        
+        var previous
+        var num_points = this.num_curve_sections;
+        for (var i=0; i<num_points; i++){
+               
+        }
     }
 
     // pt0:          object ({x: __, y: __})
@@ -119,8 +127,7 @@ function setFramebufferColor(framebuffer, px, color){
     framebuffer.data[px + 2] = color[2];
     framebuffer.data[px + 3] = color[3];
 }
-function drawLineXY(x0,y0,x1,y1,color,framebuffer)
-{
+function drawLineXY(x0,y0,x1,y1,color,framebuffer){
     if (Math.abs(y1-y0) <= Math.abs(x1-x0)) {
         if (x0<x1){
             drawLineLow(x0,y0,x1,y1,color,framebuffer);
@@ -161,8 +168,7 @@ function drawLineLow(x0, y0, x1, y1, color, framebuffer){
         }
     }
 } 
-function drawLineHigh(x0,y0,x1,y1,color,framebuffer)
-{
+function drawLineHigh(x0,y0,x1,y1,color,framebuffer){
     var x = x0;
     var y = y0;
     var deltaX = y1 - y0;
