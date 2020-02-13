@@ -51,7 +51,7 @@ class Renderer {
         var pt0 = {x: 100, y: 100};
         var pt1 = {x: 200, y: 100};
         var color = [168, 78, 50, 100];
-        drawLine(pt0, pt1, color, framebuffer)
+        this.drawLine(pt0, pt1, color, framebuffer)
     }
 
     // framebuffer:  canvas ctx image data
@@ -103,7 +103,7 @@ class Renderer {
     {
         drawLineXY(pt0.x, pt0.y, pt1.x, pt1.y, color, framebuffer);
     }
-    drawLineXY(x0,y0,x1,y1,color,framebuffer)
+    function drawLineXY(x0,y0,x1,y1,color,framebuffer)
     {
         if (Math.abs(y1-y0) <= Math.abs(x1-x0)) {
             if (x0<x1){
@@ -122,7 +122,7 @@ class Renderer {
             }
         }
     }
-    drawLineLow(x0, y0, x1, y1, color, framebuffer){
+    function drawLineLow(x0, y0, x1, y1, color, framebuffer){
         var A = y1 - y0;
         var B = x0 - x1;
         var iy = 1;
@@ -145,7 +145,7 @@ class Renderer {
             }
         }
     }
-    drawLineHigh(x0,y0,x1,y1,color,framebuffer)
+    function drawLineHigh(x0,y0,x1,y1,color,framebuffer)
     {
         var x = x0;
         var y = y0;
