@@ -58,7 +58,7 @@ class Renderer {
     drawSlide1(framebuffer) {
         var color = [66, 245, 129, 100];
         var center = {x:250, y:250};
-        var radius = 50;
+        var radius = 100;
         this.drawCirle(center, radius, color, framebuffer);
     }
 
