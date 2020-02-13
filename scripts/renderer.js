@@ -171,7 +171,8 @@ function drawLineLow(x0, y0, x1, y1, color, framebuffer){
         if (D <= 0){
             D += 2 * A;
         }else{
-            D += 2 * A + 2 * B;y += iy;
+            D += 2 * A + 2 * B;
+            y += iy;
         }
     }
 } 
