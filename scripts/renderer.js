@@ -97,7 +97,7 @@ class Renderer {
         var angle = 360/num_points;
         var currentAngle = angle;
         for (var i=0; i<num_points; i++){
-               current = {x: center.x + (radius * Math.cos(currentAngle)), y: center.y + (radius * Math.cos(currentAngle))};
+               current = {x: center.x + (radius * Math.cos(currentAngle)), y: center.y + (radius * Math.sin(currentAngle))};
                this.drawLine(previous, current, color, framebuffer);
                previous = current;
                currentAngle = currentAngle + angle;
