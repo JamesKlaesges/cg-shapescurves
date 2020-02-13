@@ -185,7 +185,7 @@ function drawLineHigh(x0,y0,x1,y1,color,framebuffer)
     for (var i=y0; i<y1; i++)
     {
         px = pixelIndex(x,y,framebuffer);
-        setFrameBufferColor(framebuffer, px, color);
+        setFramebufferColor(framebuffer, px, color);
 
         y = y + 1;
 
