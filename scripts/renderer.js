@@ -103,87 +103,88 @@ class Renderer {
     {
         drawLineXY(pt0.x, pt0.y, pt1.x, pt1.y, color, framebuffer);
     }
-    drawLineXY(x0,y0,x1,y1,color,framebuffer)
-    {
-        if (Math.abs(y1-y0) <= Math.abs(x1-x0)) {
-            if (x0<x1){
-                drawLineLow(x0,y0,x1,y1,color,framebuffer);
-            }
-            else{
-                drawLineLow(x1,y1,x0,y0,color,framebuffer);
-            }
+};
+
+function drawLineXY(x0,y0,x1,y1,color,framebuffer)
+{
+    if (Math.abs(y1-y0) <= Math.abs(x1-x0)) {
+        if (x0<x1){
+            drawLineLow(x0,y0,x1,y1,color,framebuffer);
         }
         else{
-            if(y0<y1){
-                drawLineHigh(x0,y0,x1,y1,color,framebuffer);
-            }
-            else{
-                drawLineHigh(x1,y1,x0,y0,color,framebuffer);
-            }
+            drawLineLow(x1,y1,x0,y0,color,framebuffer);
         }
     }
-    drawLineLow(x0, y0, x1, y1, color, framebuffer){
-        var A = y1 - y0;
-        var B = x0 - x1;
-        var iy = 1;
-        if (A < 0) {
-            iy = -1;
-            A *= -1;
+    else{
+        if(y0<y1){
+            drawLineHigh(x0,y0,x1,y1,color,framebuffer);
         }
-        var D = 2 * A + B;
-        var x = x0;
-        var y = y0;
-        var px;
-        while (x <= x1){
-            px = pixelIndex(x, y, framebuffer);
-            setFramebufferColor(framebuffer, px, color);
-            x += 1;
-            if (D <= 0){
-                D += 2 * A;
-            }else{
-                D += 2 * A + 2 * B;y += iy;
-            }
+        else{
+            drawLineHigh(x1,y1,x0,y0,color,framebuffer);
         }
     }
-    drawLineHigh(x0,y0,x1,y1,color,framebuffer)
+}
+function drawLineLow(x0, y0, x1, y1, color, framebuffer){
+    var A = y1 - y0;
+    var B = x0 - x1;
+    var iy = 1;
+    if (A < 0) {
+        iy = -1;
+        A *= -1;
+    }
+    var D = 2 * A + B;
+    var x = x0;
+    var y = y0;
+    var px;
+    while (x <= x1){
+        px = pixelIndex(x, y, framebuffer);
+        setFramebufferColor(framebuffer, px, color);
+        x += 1;
+        if (D <= 0){
+            D += 2 * A;
+        }else{
+            D += 2 * A + 2 * B;y += iy;
+        }
+    }
+} 
+function drawLineHigh(x0,y0,x1,y1,color,framebuffer)
+{
+    var x = x0;
+    var y = y0;
+    var deltaX = y1 - y0;
+    var deltaY = x1 - x0;
+    var A = deltaY;
+    var B = -deltaX;
+    var px;
+    var dx = 1;
+
+    if (A<0)
     {
-        var x = x0;
-        var y = y0;
-        var deltaX = y1 - y0;
-        var deltaY = x1 - x0;
-        var A = deltaY;
-        var B = -deltaX;
-        var px;
-        var dx = 1;
-
-        if (A<0)
-        {
-            dx = -1;
-            A = A*(-1);
-        }
-
-        var D = (2 * A) + B;
-        var D1 = (2 * A) + (2 * B);
-        var D0 = (2 * A);
-
-        for (var i=y0; i<y1; i++)
-        {
-            px = pixelIndex(x,y,framebuffer);
-            setFrameBufferColor(framebuffer, px, color);
-
-            y = y + 1;
-
-            if (D<=0)
-            {	
-                D = D + D0;
-            }
-            else
-            {
-                D = D + D1;
-                x = x + dx;
-            }
-
-
-        }
+        dx = -1;
+        A = A*(-1);
     }
-};
+
+    var D = (2 * A) + B;
+    var D1 = (2 * A) + (2 * B);
+    var D0 = (2 * A);
+
+    for (var i=y0; i<y1; i++)
+    {
+        px = pixelIndex(x,y,framebuffer);
+        setFrameBufferColor(framebuffer, px, color);
+
+        y = y + 1;
+
+        if (D<=0)
+        {	
+            D = D + D0;
+        }
+        else
+        {
+            D = D + D1;
+            x = x + dx;
+        }
+
+
+    }
+}
