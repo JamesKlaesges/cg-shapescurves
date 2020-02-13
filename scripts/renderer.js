@@ -48,13 +48,10 @@ class Renderer {
 
     // framebuffer:  canvas ctx image data
     drawSlide0(framebuffer) {
-        var pt0 = {x: 100, y: 100};
-        var pt1 = {x: 500, y: 100};
         var color = [168, 78, 50, 100];
-        this.drawLine(pt0, pt1, color, framebuffer)
-        var pt00 = {x: 100, y: 500};
-        var pt11 = {x: 500, y: 500};
-        this.drawLine(pt00, pt11, color, framebuffer)
+        var left_bot = {x:100, y:100};
+        var right_top = {x:500, y:500};
+        this.drawRectangle(left_bot, right_top, color, framebuffer);
     }
 
     // framebuffer:  canvas ctx image data
@@ -77,7 +74,12 @@ class Renderer {
     // color:        array of int [R, G, B, A]
     // framebuffer:  canvas ctx image data
     drawRectangle(left_bottom, right_top, color, framebuffer) {
-        
+        var left_top = {x: left_bottom.x, y: right_top.y};
+        var right_bot = {x: right_top.x, y: left_bottom.y};
+        this.drawLine(left_bottom, right_bot, color, framebuffer);
+        this.drawLine(right_bot, right_top, color, framebuffer);
+        this.drawLine(right_top, left_top, color, framebuffer);
+        this.drawLine(left_top, left_bottom, color, framebuffer);
     }
 
     // center:       object ({x: __, y: __})
