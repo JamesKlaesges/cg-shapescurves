@@ -59,7 +59,7 @@ class Renderer {
         var color = [66, 245, 129, 100];
         var center = {x:250, y:250};
         var radius = 50;
-        drawCirle(center, radius, color, framebuffer);
+        this.drawCirle(center, radius, color, framebuffer);
     }
 
     // framebuffer:  canvas ctx image data
