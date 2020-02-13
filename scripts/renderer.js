@@ -105,6 +105,15 @@ class Renderer {
     }
 };
 
+function pixelIndex(x, y, framebuffer){
+    return 4 * y * framebuffer.width + 4 * x;
+}
+function setFramebufferColor(framebuffer, px, color){
+    framebuffer.data[px + 0] = color[0];
+    framebuffer.data[px + 1] = color[1];
+    framebuffer.data[px + 2] = color[2];
+    framebuffer.data[px + 3] = color[3];
+}
 function drawLineXY(x0,y0,x1,y1,color,framebuffer)
 {
     if (Math.abs(y1-y0) <= Math.abs(x1-x0)) {
