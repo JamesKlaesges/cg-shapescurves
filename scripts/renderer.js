@@ -82,16 +82,24 @@ class Renderer {
         var center;
         var radius = 50;
         
+        //J
         pt0 = {x:100, y:600};
         pt1 = {x:200, y:650};
         this.drawRectangle(pt0, pt1, color, framebuffer);
         this.drawLine(pt0, pt1, color, framebuffer);
         
+        //a
         center = {x: 250, y:250};
         this.drawCircle(center, radius, color, framebuffer);
-        pt0 = {x:300, y:250};
-        pt1 = {x:350, y:300};
+        pt0 = {x:275, y:275};
+        pt1 = {x:350, y:200};
         this.drawLine(pt0, pt1, color, framebuffer);
+        
+        //m
+        
+        //e
+        
+        //s
     }
 
     // left_bottom:  object ({x: __, y: __})
