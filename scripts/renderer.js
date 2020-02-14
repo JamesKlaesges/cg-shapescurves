@@ -124,8 +124,8 @@ class Renderer {
         var increment = 1/num_points;
         var t = increment;
         for (var i=0; i<num_points; i++){
-               x = ((1 - t)**3) * pt0.x + 3*((1 - t)**2) * t * pt1.x + 3*(1 - t) * t**2 * pt2.x + t**3 * pt3.x;
-               y = ((1 - t)**3) * pt0.y + 3*((1 - t)**2) * t * pt1.y + 3*(1 - t) * t**2 * pt2.y + t**3 * pt3.y;
+               x = Math.round(((1 - t)**3) * pt0.x + 3*((1 - t)**2) * t * pt1.x + 3*(1 - t) * t**2 * pt2.x + t**3 * pt3.x);
+               y = Math.round(((1 - t)**3) * pt0.y + 3*((1 - t)**2) * t * pt1.y + 3*(1 - t) * t**2 * pt2.y + t**3 * pt3.y);
                current = {x: x, y: y};
                this.drawLine(previous, current, color, framebuffer);
                console.error('t = '+t);
