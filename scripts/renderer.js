@@ -59,7 +59,7 @@ class Renderer {
         var color = [66, 245, 129, 500];
         var center = {x:250, y:250};
         var radius = 100;
-        this.drawCirle(center, radius, color, framebuffer);
+        this.drawCircle(center, radius, color, framebuffer);
     }
 
     // framebuffer:  canvas ctx image data
@@ -112,7 +112,7 @@ class Renderer {
     // radius:       int
     // color:        array of int [R, G, B, A]
     // framebuffer:  canvas ctx image data
-    drawCirle(center, radius, color, framebuffer) {
+    drawCircle(center, radius, color, framebuffer) {
         var current;
         var previous = {x: center.x + radius, y: center.y};
         var num_points = this.num_curve_sections;
