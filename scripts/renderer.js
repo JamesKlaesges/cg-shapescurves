@@ -104,8 +104,6 @@ class Renderer {
         for (var i=0; i<num_points; i++){
                current = {x: center.x + Math.round(radius * Math.cos(currentAngle*0.0174533)), y: center.y + Math.round(radius * Math.sin(currentAngle*0.0174533))};
                this.drawLine(previous, current, color, framebuffer);
-               console.error('Plotting from x = ' + previous.x + ', y = ' + previous.y + ' to point x = ' + current.x + ', y = ' + current.y);
-               console.error('Angle = ' + currentAngle);
                previous = current;
                currentAngle = currentAngle + angle;
         }
@@ -130,6 +128,8 @@ class Renderer {
                y = ((1 - t)**3) * pt0.y + 3*((1 - t)**2) * t * pt1.y + 3*(1 - t) * t**2 * pt2.y + t**3 * pt3.y;
                current = {x: x, y: y};
                this.drawLine(previous, current, color, framebuffer);
+               console.error('t = '+t);
+               console.error('Plotting from x = ' + previous.x + ', y = ' + previous.y + ' to point x = ' + current.x + ', y = ' + current.y);
                previous = current;
                t = t + increment;
         }
