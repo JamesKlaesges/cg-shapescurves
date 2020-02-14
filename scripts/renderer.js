@@ -86,7 +86,9 @@ class Renderer {
         pt0 = {x:75, y:400};
         pt1 = {x:175, y:405};
         this.drawRectangle(pt0, pt1, color, framebuffer);
-        
+        this.drawLine(pt0, pt1, color, framebuffer);
+        pt0 = {x:125, y:400};
+        pt1 = {x:125, y:300};
         this.drawLine(pt0, pt1, color, framebuffer);
         
         //a
