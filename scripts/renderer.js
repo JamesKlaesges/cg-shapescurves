@@ -78,6 +78,7 @@ class Renderer {
         var left_bot = {x:100, y:600};
         var right_top = {x:200, y:650};
         this.drawRectangle(left_bot, right_top, color, framebuffer);
+        this.drawLine(left_bot, right_top, color, framebuffer);
     }
 
     // left_bottom:  object ({x: __, y: __})
