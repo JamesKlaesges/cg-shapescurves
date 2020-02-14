@@ -48,7 +48,7 @@ class Renderer {
 
     // framebuffer:  canvas ctx image data
     drawSlide0(framebuffer) {
-        var color = [168, 78, 50, 1];
+        var color = [168, 78, 50, 500];
         var left_bot = {x:100, y:100};
         var right_top = {x:700, y:500};
         this.drawRectangle(left_bot, right_top, color, framebuffer);
@@ -56,7 +56,7 @@ class Renderer {
 
     // framebuffer:  canvas ctx image data
     drawSlide1(framebuffer) {
-        var color = [66, 245, 129, 1];
+        var color = [66, 245, 129, 500];
         var center = {x:250, y:250};
         var radius = 100;
         this.drawCirle(center, radius, color, framebuffer);
@@ -64,7 +64,12 @@ class Renderer {
 
     // framebuffer:  canvas ctx image data
     drawSlide2(framebuffer) {
-
+        var color = [0, 0, 0, 1];
+        var pt0 = {x: 250, y: 250};
+        var pt1 = {x: 350, y: 550};
+        var pt2 = {x: 400, y: 6000};
+        var pt3 = {x: 450, y: 350};
+        this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer)
     }
 
     // framebuffer:  canvas ctx image data
@@ -96,8 +101,7 @@ class Renderer {
         var num_points = this.num_curve_sections;
         var angle = 360/num_points;
         var currentAngle = angle;
-        var i;
-        for (i=0; i<num_points; i++){
+        for (var i=0; i<num_points; i++){
                current = {x: center.x + Math.round(radius * Math.cos(currentAngle*0.0174533)), y: center.y + Math.round(radius * Math.sin(currentAngle*0.0174533))};
                this.drawLine(previous, current, color, framebuffer);
                console.error('Plotting from x = ' + previous.x + ', y = ' + previous.y + ' to point x = ' + current.x + ', y = ' + current.y);
