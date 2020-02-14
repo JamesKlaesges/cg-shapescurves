@@ -117,23 +117,23 @@ class Renderer {
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
         
         //e
-        pt0 = {x:500, y:200};
-        pt1 = {x:425, y:200};
-        pt2 = {x:425, y:300};
-        pt3 = {x:500, y:300};
+        pt0 = {x:600, y:200};
+        pt1 = {x:525, y:200};
+        pt2 = {x:525, y:300};
+        pt3 = {x:600, y:300};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
         
         //s
-        //pt0 = {x:425, y:200};
-        //pt1 = {x:425, y:300};
-        //pt2 = {x:475, y:300};
-        //pt3 = {x:475, y:200};
-        //this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
-        //pt0 = {x:425, y:200};
-        //pt1 = {x:425, y:300};
-        //pt2 = {x:475, y:300};
-        //pt3 = {x:475, y:200};
-        //this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
+        pt0 = {x:575, y:200};
+        pt1 = {x:675, y:200};
+        pt2 = {x:675, y:300};
+        pt3 = {x:575, y:300};
+        this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
+        pt0 = {x:675, y:300};
+        pt1 = {x:575, y:300};
+        pt2 = {x:575, y:400};
+        pt3 = {x:675, y:400};
+        this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
     }
 
     // left_bottom:  object ({x: __, y: __})
