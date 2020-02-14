@@ -91,8 +91,8 @@ class Renderer {
         //a
         center = {x: 250, y:250};
         this.drawCircle(center, radius, color, framebuffer);
-        pt0 = {x:275, y:275};
-        pt1 = {x:350, y:200};
+        pt0 = {x:275, y:300};
+        pt1 = {x:325, y:200};
         this.drawLine(pt0, pt1, color, framebuffer);
         
         //m
