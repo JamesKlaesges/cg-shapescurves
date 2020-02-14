@@ -80,6 +80,7 @@ class Renderer {
         var pt2;
         var pt3;
         var center;
+        var radius = 50;
         
         pt0 = {x:100, y:600};
         pt1 = {x:200, y:650};
@@ -87,7 +88,7 @@ class Renderer {
         this.drawLine(pt0, pt1, color, framebuffer);
         
         center = {x: 250, y:250};
-        this.drawCircle(center, 50, color, framebuffer);
+        this.drawCircle(center, radius, color, framebuffer);
         pt0 = {x:300, y:250};
         pt1 = {x:350, y:300};
         this.drawLine(pt0, pt1, color, framebuffer);
