@@ -52,7 +52,6 @@ class Renderer {
         var left_bot = {x:100, y:100};
         var right_top = {x:700, y:500};
         this.drawRectangle(left_bot, right_top, color, framebuffer);
-        this.drawLine(left_bot,right_top,color, framebuffer);
     }
 
     // framebuffer:  canvas ctx image data
@@ -101,6 +100,7 @@ class Renderer {
         for (i=0; i<num_points+1; i++){
                current = {x: center.x + (radius * Math.cos(currentAngle)), y: center.y + (radius * Math.sin(currentAngle))};
                this.drawLine(previous, current, color, framebuffer);
+               vsprintf('drawing line from x %d, y %d to x %d, y %d',[previous.x,previous.y,current.x,current.y]);
                previous = current;
                currentAngle = currentAngle + angle;
         }
