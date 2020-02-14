@@ -64,7 +64,7 @@ class Renderer {
 
     // framebuffer:  canvas ctx image data
     drawSlide2(framebuffer) {
-        var color = [0, 0, 0, 1];
+        var color = [0, 0, 0, 500];
         var pt0 = {x: 250, y: 250};
         var pt1 = {x: 350, y: 550};
         var pt2 = {x: 400, y: 600};
