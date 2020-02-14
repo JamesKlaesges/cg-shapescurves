@@ -74,7 +74,10 @@ class Renderer {
 
     // framebuffer:  canvas ctx image data
     drawSlide3(framebuffer) {
-
+        var color = [135, 43, 227, 500];
+        var left_bot = {x:100, y:600};
+        var right_top = {x:200, y:650};
+        this.drawRectangle(left_bot, right_top, color, framebuffer);
     }
 
     // left_bottom:  object ({x: __, y: __})
