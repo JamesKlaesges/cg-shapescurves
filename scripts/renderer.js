@@ -67,7 +67,7 @@ class Renderer {
         var color = [0, 0, 0, 1];
         var pt0 = {x: 250, y: 250};
         var pt1 = {x: 350, y: 550};
-        var pt2 = {x: 400, y: 6000};
+        var pt2 = {x: 400, y: 600};
         var pt3 = {x: 450, y: 350};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer)
     }
@@ -118,7 +118,21 @@ class Renderer {
     // color:        array of int [R, G, B, A]
     // framebuffer:  canvas ctx image data
     drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer) {
-        
+        var x;
+        var y;
+        var current;
+        var previous = {x: pt0.x, y: pt0.y};
+        var num_points = this.num_curve_sections;
+        var increment = 1/num_points;
+        var t = increment;
+        for (var i=0; i<num_points; i++){
+               x = ((1 - t)**3) * pt0.x + 3((1 - t)**2) * t * pt1.x + 3(1 - t) * t**2 * pt2.x + t**3 * pt3.x;
+               y = ((1 - t)**3) * pt0.y + 3((1 - t)**2) * t * pt1.y + 3(1 - t) * t**2 * pt2.y + t**3 * pt3.y;
+               current = {x: x, y: y};
+               this.drawLine(previous, current, color, framebuffer);
+               previous = current;
+               t = t + increment;
+        }
     }
 
     // pt0:          object ({x: __, y: __})
