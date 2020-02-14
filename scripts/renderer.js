@@ -48,7 +48,7 @@ class Renderer {
 
     // framebuffer:  canvas ctx image data
     drawSlide0(framebuffer) {
-        var color = [168, 78, 50, 100];
+        var color = [168, 78, 50, 1];
         var left_bot = {x:100, y:100};
         var right_top = {x:700, y:500};
         this.drawRectangle(left_bot, right_top, color, framebuffer);
@@ -56,7 +56,7 @@ class Renderer {
 
     // framebuffer:  canvas ctx image data
     drawSlide1(framebuffer) {
-        var color = [66, 245, 129, 100];
+        var color = [66, 245, 129, 1];
         var center = {x:250, y:250};
         var radius = 100;
         this.drawCirle(center, radius, color, framebuffer);
