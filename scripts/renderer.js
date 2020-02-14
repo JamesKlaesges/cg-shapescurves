@@ -102,7 +102,7 @@ class Renderer {
                this.drawLine(previous, current, color, framebuffer);
                console.error('Plotting from x = ' + previous.x + ', y = ' + previous.y + ' to point x = ' + current.x + ', y = ' + current.y);
                console.error('Angle = ' + currentAngle);
-                previous = current;
+               previous = current;
                currentAngle = currentAngle + angle;
         }
     }
