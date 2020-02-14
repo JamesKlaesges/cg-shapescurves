@@ -83,8 +83,8 @@ class Renderer {
         var radius = 50;
         
         //J
-        pt0 = {x:100, y:600};
-        pt1 = {x:200, y:650};
+        pt0 = {x:100, y:500};
+        pt1 = {x:200, y:550};
         this.drawRectangle(pt0, pt1, color, framebuffer);
         this.drawLine(pt0, pt1, color, framebuffer);
         
