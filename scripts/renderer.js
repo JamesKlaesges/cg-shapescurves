@@ -52,6 +52,7 @@ class Renderer {
         var left_bot = {x:100, y:100};
         var right_top = {x:700, y:500};
         this.drawRectangle(left_bot, right_top, color, framebuffer);
+        this.drawLine(left_bot,right_top,color, framebuffer);
     }
 
     // framebuffer:  canvas ctx image data
