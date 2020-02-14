@@ -75,10 +75,22 @@ class Renderer {
     // framebuffer:  canvas ctx image data
     drawSlide3(framebuffer) {
         var color = [135, 43, 227, 500];
-        var left_bot = {x:100, y:600};
-        var right_top = {x:200, y:650};
-        this.drawRectangle(left_bot, right_top, color, framebuffer);
-        this.drawLine(left_bot, right_top, color, framebuffer);
+        var pt0;
+        var pt1;
+        var pt2;
+        var pt3;
+        var center;
+        
+        pt0 = {x:100, y:600};
+        pt1 = {x:200, y:650};
+        this.drawRectangle(pt0, pt1, color, framebuffer);
+        this.drawLine(pt0, pt1, color, framebuffer);
+        
+        center = {x: 250, y:250};
+        this.drawCircle(center, 50, color, framebuffer);
+        pt0 = {x:300, y:250};
+        pt1 = {x:350, y:300};
+        this.drawLine(pt0, pt1, color, framebuffer);
     }
 
     // left_bottom:  object ({x: __, y: __})
