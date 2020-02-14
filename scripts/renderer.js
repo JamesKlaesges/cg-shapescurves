@@ -100,10 +100,7 @@ class Renderer {
         for (i=0; i<num_points+1; i++){
                current = {x: center.x + (radius * Math.cos(currentAngle)), y: center.y + (radius * Math.sin(currentAngle))};
                this.drawLine(previous, current, color, framebuffer);
-               console.error('Plotting from x' + 'x = ' + previous.x);
-            console.error('Plotting from y' + 'y = ' + previous.y);
-            console.error('Plotting from x' + 'x = ' + current.x);
-            console.error('Plotting from y' + 'y = ' + current.y);
+               console.error('Plotting from x = ' + previous.x + ', y = ' + previous.y + ' to point x = ' + current.x + ', y = ' + current.y);
                previous = current;
                currentAngle = currentAngle + angle;
         }
