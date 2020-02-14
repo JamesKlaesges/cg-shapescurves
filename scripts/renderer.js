@@ -66,8 +66,8 @@ class Renderer {
     drawSlide2(framebuffer) {
         var color = [0, 0, 0, 500];
         var pt0 = {x: 250, y: 250};
-        var pt1 = {x: 250, y: 550};
-        var pt2 = {x: 250, y: 600};
+        var pt1 = {x: 250, y: 500};
+        var pt2 = {x: 450, y: 500};
         var pt3 = {x: 450, y: 250};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer)
     }
