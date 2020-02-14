@@ -86,7 +86,6 @@ class Renderer {
         pt0 = {x:75, y:400};
         pt1 = {x:175, y:405};
         this.drawRectangle(pt0, pt1, color, framebuffer);
-        this.drawLine(pt0, pt1, color, framebuffer);
         pt0 = {x:125, y:400};
         pt1 = {x:125, y:300};
         this.drawLine(pt0, pt1, color, framebuffer);
@@ -122,17 +121,22 @@ class Renderer {
         pt2 = {x:525, y:300};
         pt3 = {x:600, y:300};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
+        pt0 = {x:600, y:300};
+        pt1 = {x:625, y:300};
+        pt2 = {x:625, y:275};
+        pt3 = {x:600, y:275};
+        this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
         
         //s
-        pt0 = {x:575, y:200};
+        pt0 = {x:625, y:200};
         pt1 = {x:675, y:200};
-        pt2 = {x:675, y:300};
-        pt3 = {x:575, y:300};
+        pt2 = {x:675, y:250};
+        pt3 = {x:625, y:250};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
-        pt0 = {x:675, y:300};
-        pt1 = {x:575, y:300};
-        pt2 = {x:575, y:400};
-        pt3 = {x:675, y:400};
+        pt0 = {x:625, y:250};
+        pt1 = {x:575, y:250};
+        pt2 = {x:575, y:300};
+        pt3 = {x:675, y:300};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
     }
 
