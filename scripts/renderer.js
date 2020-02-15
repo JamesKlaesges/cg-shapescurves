@@ -180,7 +180,7 @@ class Renderer {
                current = {x: center.x + Math.round(radius * Math.cos(currentAngle*0.0174533)), y: center.y + Math.round(radius * Math.sin(currentAngle*0.0174533))};
                this.drawLine(previous, current, color, framebuffer);
                if (this.show_points) {
-                   this.drawCircle(previous, 3, color, framebuffer) {
+                   this.drawCircle(previous, 3, color, framebuffer);
                }
                previous = current;
                currentAngle = currentAngle + angle;
