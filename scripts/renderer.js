@@ -105,13 +105,13 @@ class Renderer {
         
         //m
         pt0 = {x:325, y:200};
-        pt1 = {x:325, y:350};
-        pt2 = {x:375, y:350};
+        pt1 = {x:325, y:340};
+        pt2 = {x:375, y:340};
         pt3 = {x:375, y:200};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
         pt0 = {x:375, y:200};
-        pt1 = {x:375, y:350};
-        pt2 = {x:425, y:350};
+        pt1 = {x:375, y:340};
+        pt2 = {x:425, y:340};
         pt3 = {x:425, y:200};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
         
@@ -125,6 +125,11 @@ class Renderer {
         pt1 = {x:525, y:300};
         pt2 = {x:525, y:275};
         pt3 = {x:500, y:275};
+        this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
+        pt0 = {x:500, y:275};
+        pt1 = {x:475, y:275};
+        pt2 = {x:475, y:300};
+        pt3 = {x:500, y:295};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
         
         //s
