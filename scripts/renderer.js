@@ -128,8 +128,8 @@ class Renderer {
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
         pt0 = {x:500, y:275};
         pt1 = {x:475, y:275};
-        pt2 = {x:458, y:285};
-        pt3 = {x:468, y:290};
+        pt2 = {x:457, y:285};
+        pt3 = {x:467, y:290};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
         
         //s
@@ -157,6 +157,13 @@ class Renderer {
         this.drawLine(right_bot, right_top, color, framebuffer);
         this.drawLine(right_top, left_top, color, framebuffer);
         this.drawLine(left_top, left_bottom, color, framebuffer);
+        
+        if (this.show_points) {
+            this.drawCircle(left_bottom, 1, color, framebuffer);
+            this.drawCircle(right_top, 1, color, framebuffer);
+            this.drawCircle(left_top, 1, color, framebuffer);
+            this.drawCircle(right_bot, 1, color, framebuffer);
+        }
     }
 
     // center:       object ({x: __, y: __})
