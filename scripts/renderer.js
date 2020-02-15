@@ -158,11 +158,11 @@ class Renderer {
         this.drawLine(right_top, left_top, color, framebuffer);
         this.drawLine(left_top, left_bottom, color, framebuffer);
         
-        if (this.show_points) {
-            this.drawCircle(left_bottom, 3, color, framebuffer);
-            this.drawCircle(right_top, 3, color, framebuffer);
-            this.drawCircle(left_top, 3, color, framebuffer);
-            this.drawCircle(right_bot, 3, color, framebuffer);
+        if (this.show_points === true) {
+            this.drawPoint(left_bottom, 3, color, framebuffer);
+            this.drawPoint(right_top, 3, color, framebuffer);
+            this.drawPoint(left_top, 3, color, framebuffer);
+            this.drawPoint(right_bot, 3, color, framebuffer);
         }
     }
 
@@ -179,14 +179,28 @@ class Renderer {
         for (var i=0; i<num_points; i++){
                current = {x: center.x + Math.round(radius * Math.cos(currentAngle*0.0174533)), y: center.y + Math.round(radius * Math.sin(currentAngle*0.0174533))};
                this.drawLine(previous, current, color, framebuffer);
-               if (this.show_points) {
-                   this.drawCircle(previous, 3, color, framebuffer);
+               if (this.show_points === true) {
+                    this.drawPoint(previous, 3, color, framebuffer);
                }
                previous = current;
                currentAngle = currentAngle + angle;
         }
     }
-
+    
+    drawPoint(center, radius, color, framebuffer) {
+        var current;
+        var previous = {x: center.x + radius, y: center.y};
+        var num_points = this.num_curve_sections;
+        var angle = 360/num_points;
+        var currentAngle = angle;
+        for (var i=0; i<num_points; i++){
+               current = {x: center.x + Math.round(radius * Math.cos(currentAngle*0.0174533)), y: center.y + Math.round(radius * Math.sin(currentAngle*0.0174533))};
+               this.drawLine(previous, current, color, framebuffer);
+               previous = current;
+               currentAngle = currentAngle + angle;
+        }  
+    }
+    
     // pt0:          object ({x: __, y: __})
     // pt1:          object ({x: __, y: __})
     // pt2:          object ({x: __, y: __})
