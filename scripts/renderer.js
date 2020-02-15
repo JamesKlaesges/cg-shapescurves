@@ -89,8 +89,10 @@ class Renderer {
         pt0 = {x:125, y:400};
         pt1 = {x:125, y:300};
         this.drawLine(pt0, pt1, color, framebuffer);
-        this.drawPoint(pt0, 2, color, framebuffer);
-        this.drawPoint(pt1, 2, color, framebuffer);
+        if (this.show_points === true) {
+            this.drawPoint(pt0, 2, color, framebuffer);
+            this.drawPoint(pt1, 2, color, framebuffer);
+        }
         
         pt0 = {x:125, y:300};
         pt1 = {x:125, y:175};
@@ -104,8 +106,10 @@ class Renderer {
         pt0 = {x:250, y:300};
         pt1 = {x:300, y:200};
         this.drawLine(pt0, pt1, color, framebuffer);
-        this.drawPoint(pt0, 2, color, framebuffer);
-        this.drawPoint(pt1, 2, color, framebuffer);
+        if (this.show_points === true) {
+            this.drawPoint(pt0, 2, color, framebuffer);
+            this.drawPoint(pt1, 2, color, framebuffer);
+        }
         
         //m
         pt0 = {x:325, y:200};
@@ -162,7 +166,6 @@ class Renderer {
         this.drawLine(right_top, left_top, color, framebuffer);
         this.drawLine(left_top, left_bottom, color, framebuffer);
         
-        console.error('Show points='+this.show_points);
         if (this.show_points === true) {
             this.drawPoint(left_bottom, 2, color, framebuffer);
             this.drawPoint(right_top, 2, color, framebuffer);
