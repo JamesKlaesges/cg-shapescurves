@@ -159,10 +159,10 @@ class Renderer {
         this.drawLine(left_top, left_bottom, color, framebuffer);
         
         if (this.show_points) {
-            this.drawCircle(left_bottom, 2, color, framebuffer);
-            this.drawCircle(right_top, 2, color, framebuffer);
-            this.drawCircle(left_top, 2, color, framebuffer);
-            this.drawCircle(right_bot, 2, color, framebuffer);
+            this.drawCircle(left_bottom, 3, color, framebuffer);
+            this.drawCircle(right_top, 3, color, framebuffer);
+            this.drawCircle(left_top, 3, color, framebuffer);
+            this.drawCircle(right_bot, 3, color, framebuffer);
         }
     }
 
@@ -179,6 +179,9 @@ class Renderer {
         for (var i=0; i<num_points; i++){
                current = {x: center.x + Math.round(radius * Math.cos(currentAngle*0.0174533)), y: center.y + Math.round(radius * Math.sin(currentAngle*0.0174533))};
                this.drawLine(previous, current, color, framebuffer);
+               if (this.show_points) {
+                   this.drawCircle(previous, 3, color, framebuffer) {
+               }
                previous = current;
                currentAngle = currentAngle + angle;
         }
