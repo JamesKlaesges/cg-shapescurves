@@ -158,7 +158,7 @@ class Renderer {
         this.drawLine(right_top, left_top, color, framebuffer);
         this.drawLine(left_top, left_bottom, color, framebuffer);
         
-        cosole.error('Show points='+this.show_points);
+        console.error('Show points='+this.show_points);
         if (this.show_points === true) {
             this.drawPoint(left_bottom, 5, color, framebuffer);
             this.drawPoint(right_top, 5, color, framebuffer);
