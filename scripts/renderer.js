@@ -158,11 +158,12 @@ class Renderer {
         this.drawLine(right_top, left_top, color, framebuffer);
         this.drawLine(left_top, left_bottom, color, framebuffer);
         
+        cosole.error('Show points='+this.show_points);
         if (this.show_points === true) {
-            this.drawPoint(left_bottom, 3, color, framebuffer);
-            this.drawPoint(right_top, 3, color, framebuffer);
-            this.drawPoint(left_top, 3, color, framebuffer);
-            this.drawPoint(right_bot, 3, color, framebuffer);
+            this.drawPoint(left_bottom, 5, color, framebuffer);
+            this.drawPoint(right_top, 5, color, framebuffer);
+            this.drawPoint(left_top, 5, color, framebuffer);
+            this.drawPoint(right_bot, 5, color, framebuffer);
         }
     }
 
@@ -215,6 +216,8 @@ class Renderer {
         var num_points = this.num_curve_sections;
         var increment = 1/num_points;
         var t = increment;
+        this.drawPoint(pt1, 3, color, framebuffer);
+        this.drawPoint(pt2, 3, color, framebuffer);
         for (var i=0; i<num_points; i++){
                x = Math.round(((1 - t)**3) * pt0.x + 3*((1 - t)**2) * t * pt1.x + 3*(1 - t) * t**2 * pt2.x + t**3 * pt3.x);
                y = Math.round(((1 - t)**3) * pt0.y + 3*((1 - t)**2) * t * pt1.y + 3*(1 - t) * t**2 * pt2.y + t**3 * pt3.y);
