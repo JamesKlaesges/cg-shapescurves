@@ -20,6 +20,7 @@ class Renderer {
     // flag:  bool
     showPoints(flag) {
         this.show_points = flag;
+        this.drawSlide(this.slide_idx);
     }
     
     // slide_idx:  int
