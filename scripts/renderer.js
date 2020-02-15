@@ -229,6 +229,9 @@ class Renderer {
                previous = current;
                t = t + increment;
         }
+        if (this.show_points === true) {
+            this.drawPoint(current, 3, color, framebuffer);
+        }
     }
 
     // pt0:          object ({x: __, y: __})
@@ -237,6 +240,10 @@ class Renderer {
     // framebuffer:  canvas ctx image data
     drawLine(pt0, pt1, color, framebuffer)
     {
+         if (this.show_points === true) {
+            this.drawPoint(pt0, 2, color, framebuffer);
+            this.drawPoint(pt1, 2, color, framebuffer);
+         }
         drawLineXY(pt0.x, pt0.y, pt1.x, pt1.y, color, framebuffer);
     }
 };
