@@ -227,8 +227,8 @@ class Renderer {
         var pt5 = {x: pt1.x+2, y: pt1.y+2};
         var pt6 = {x: pt2.x-2, y: pt2.y-2};
         var pt7 = {x: pt2.x+2, y: pt2.y+2};
-        this.drawRectangle(pt4, pt5, color, framebuffer) {
-        this.drawRectangle(pt6, pt7, color, framebuffer) {
+        this.drawRectangle(pt4, pt5, color, framebuffer);
+        this.drawRectangle(pt6, pt7, color, framebuffer);
         for (var i=0; i<num_points; i++){
                x = Math.round(((1 - t)**3) * pt0.x + 3*((1 - t)**2) * t * pt1.x + 3*(1 - t) * t**2 * pt2.x + t**3 * pt3.x);
                y = Math.round(((1 - t)**3) * pt0.y + 3*((1 - t)**2) * t * pt1.y + 3*(1 - t) * t**2 * pt2.y + t**3 * pt3.y);
