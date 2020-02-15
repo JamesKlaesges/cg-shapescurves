@@ -89,6 +89,8 @@ class Renderer {
         pt0 = {x:125, y:400};
         pt1 = {x:125, y:300};
         this.drawLine(pt0, pt1, color, framebuffer);
+        this.drawPoint(pt0, 2, color, framebuffer);
+        this.drawPoint(pt1, 2, color, framebuffer);
         
         pt0 = {x:125, y:300};
         pt1 = {x:125, y:175};
@@ -102,6 +104,8 @@ class Renderer {
         pt0 = {x:250, y:300};
         pt1 = {x:300, y:200};
         this.drawLine(pt0, pt1, color, framebuffer);
+        this.drawPoint(pt0, 2, color, framebuffer);
+        this.drawPoint(pt1, 2, color, framebuffer);
         
         //m
         pt0 = {x:325, y:200};
@@ -160,10 +164,10 @@ class Renderer {
         
         console.error('Show points='+this.show_points);
         if (this.show_points === true) {
-            this.drawPoint(left_bottom, 5, color, framebuffer);
-            this.drawPoint(right_top, 5, color, framebuffer);
-            this.drawPoint(left_top, 5, color, framebuffer);
-            this.drawPoint(right_bot, 5, color, framebuffer);
+            this.drawPoint(left_bottom, 2, color, framebuffer);
+            this.drawPoint(right_top, 2, color, framebuffer);
+            this.drawPoint(left_top, 2, color, framebuffer);
+            this.drawPoint(right_bot, 2, color, framebuffer);
         }
     }
 
@@ -181,7 +185,7 @@ class Renderer {
                current = {x: center.x + Math.round(radius * Math.cos(currentAngle*0.0174533)), y: center.y + Math.round(radius * Math.sin(currentAngle*0.0174533))};
                this.drawLine(previous, current, color, framebuffer);
                if (this.show_points === true) {
-                    this.drawPoint(previous, 3, color, framebuffer);
+                    this.drawPoint(previous, 2, color, framebuffer);
                }
                previous = current;
                currentAngle = currentAngle + angle;
@@ -216,8 +220,8 @@ class Renderer {
         var num_points = this.num_curve_sections;
         var increment = 1/num_points;
         var t = increment;
-        this.drawPoint(pt1, 3, color, framebuffer);
-        this.drawPoint(pt2, 3, color, framebuffer);
+        this.drawPoint(pt1, 2, color, framebuffer);
+        this.drawPoint(pt2, 2, color, framebuffer);
         for (var i=0; i<num_points; i++){
                x = Math.round(((1 - t)**3) * pt0.x + 3*((1 - t)**2) * t * pt1.x + 3*(1 - t) * t**2 * pt2.x + t**3 * pt3.x);
                y = Math.round(((1 - t)**3) * pt0.y + 3*((1 - t)**2) * t * pt1.y + 3*(1 - t) * t**2 * pt2.y + t**3 * pt3.y);
@@ -240,10 +244,6 @@ class Renderer {
     // framebuffer:  canvas ctx image data
     drawLine(pt0, pt1, color, framebuffer)
     {
-         if (this.show_points === true) {
-            this.drawPoint(pt0, 2, color, framebuffer);
-            this.drawPoint(pt1, 2, color, framebuffer);
-         }
         drawLineXY(pt0.x, pt0.y, pt1.x, pt1.y, color, framebuffer);
     }
 };
