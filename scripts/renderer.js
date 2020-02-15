@@ -128,7 +128,7 @@ class Renderer {
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
         pt0 = {x:500, y:275};
         pt1 = {x:475, y:275};
-        pt2 = {x:460, y:285};
+        pt2 = {x:450, y:285};
         pt3 = {x:445, y:290};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
         
