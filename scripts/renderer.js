@@ -97,46 +97,46 @@ class Renderer {
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
         
         //a
-        center = {x: 250, y:250};
+        center = {x: 225, y:250};
         this.drawCircle(center, radius, color, framebuffer);
-        pt0 = {x:275, y:300};
-        pt1 = {x:325, y:200};
+        pt0 = {x:250, y:300};
+        pt1 = {x:300, y:200};
         this.drawLine(pt0, pt1, color, framebuffer);
         
         //m
+        pt0 = {x:325, y:200};
+        pt1 = {x:325, y:350};
+        pt2 = {x:375, y:350};
+        pt3 = {x:375, y:200};
+        this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
         pt0 = {x:375, y:200};
         pt1 = {x:375, y:350};
         pt2 = {x:425, y:350};
         pt3 = {x:425, y:200};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
-        pt0 = {x:425, y:200};
-        pt1 = {x:425, y:350};
-        pt2 = {x:475, y:350};
-        pt3 = {x:475, y:200};
-        this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
         
         //e
-        pt0 = {x:550, y:200};
-        pt1 = {x:475, y:200};
-        pt2 = {x:475, y:300};
-        pt3 = {x:550, y:300};
+        pt0 = {x:500, y:200};
+        pt1 = {x:425, y:200};
+        pt2 = {x:425, y:300};
+        pt3 = {x:500, y:300};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
-        pt0 = {x:550, y:300};
-        pt1 = {x:575, y:300};
-        pt2 = {x:575, y:275};
-        pt3 = {x:550, y:275};
+        pt0 = {x:500, y:300};
+        pt1 = {x:525, y:300};
+        pt2 = {x:525, y:275};
+        pt3 = {x:500, y:275};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
         
         //s
-        pt0 = {x:600, y:200};
-        pt1 = {x:675, y:200};
-        pt2 = {x:675, y:250};
-        pt3 = {x:625, y:250};
+        pt0 = {x:550, y:200};
+        pt1 = {x:625, y:200};
+        pt2 = {x:625, y:250};
+        pt3 = {x:575, y:250};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
-        pt0 = {x:625, y:250};
-        pt1 = {x:575, y:250};
-        pt2 = {x:575, y:300};
-        pt3 = {x:650, y:300};
+        pt0 = {x:575, y:250};
+        pt1 = {x:525, y:250};
+        pt2 = {x:525, y:300};
+        pt3 = {x:600, y:300};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
     }
 
