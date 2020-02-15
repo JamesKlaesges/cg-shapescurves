@@ -220,6 +220,9 @@ class Renderer {
                y = Math.round(((1 - t)**3) * pt0.y + 3*((1 - t)**2) * t * pt1.y + 3*(1 - t) * t**2 * pt2.y + t**3 * pt3.y);
                current = {x: x, y: y};
                this.drawLine(previous, current, color, framebuffer);
+               if (this.show_points === true) {
+                    this.drawPoint(previous, 3, color, framebuffer);
+               }
                previous = current;
                t = t + increment;
         }
