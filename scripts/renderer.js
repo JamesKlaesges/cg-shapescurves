@@ -83,8 +83,8 @@ class Renderer {
         var radius = 50;
         
         //J
-        pt0 = {x:50, y:400};
-        pt1 = {x:200, y:403};
+        pt0 = {x:60, y:400};
+        pt1 = {x:190, y:403};
         this.drawRectangle(pt0, pt1, color, framebuffer);
         pt0 = {x:125, y:400};
         pt1 = {x:125, y:300};
@@ -128,7 +128,7 @@ class Renderer {
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
         
         //s
-        pt0 = {x:625, y:200};
+        pt0 = {x:600, y:200};
         pt1 = {x:675, y:200};
         pt2 = {x:675, y:250};
         pt3 = {x:625, y:250};
@@ -136,7 +136,7 @@ class Renderer {
         pt0 = {x:625, y:250};
         pt1 = {x:575, y:250};
         pt2 = {x:575, y:300};
-        pt3 = {x:625, y:300};
+        pt3 = {x:650, y:300};
         this.drawBezierCurve(pt0, pt1, pt2, pt3, color, framebuffer);
     }
 
