@@ -159,10 +159,10 @@ class Renderer {
         this.drawLine(left_top, left_bottom, color, framebuffer);
         
         if (this.show_points) {
-            this.drawCircle(left_bottom, 1, color, framebuffer);
-            this.drawCircle(right_top, 1, color, framebuffer);
-            this.drawCircle(left_top, 1, color, framebuffer);
-            this.drawCircle(right_bot, 1, color, framebuffer);
+            this.drawCircle(left_bottom, 2, color, framebuffer);
+            this.drawCircle(right_top, 2, color, framebuffer);
+            this.drawCircle(left_top, 2, color, framebuffer);
+            this.drawCircle(right_bot, 2, color, framebuffer);
         }
     }
 
